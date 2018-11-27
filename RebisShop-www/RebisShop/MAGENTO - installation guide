@@ -1,0 +1,33 @@
+JAK ŻYĆ KIEDY MA SIĘ ZŁĄ WERSJĘ PHP
+Pliki do pobrania:
+
+https://studentpgedupl-my.sharepoint.com/:f:/g/personal/s170426_student_pg_edu_pl/EsyYMo36ujpGnrKarh_KwNgBf_w_X_nv1F3ELsk3rhpBkw?e=YFuLN7
+
+NOWA INSTRUKCJA ZIOMECZKI:
+C:\wamp\www\RebisShop -> tak ma wyglądać ścieżka do magento (nazwałem folder z magento RebisShop)
+
+Instalujemy WAMP (zwykły, nie od bitnami)
+Tworzymy nowego usera w myphp, nazywamy go admin i hasło admin - wszystkie permissions ma mieć
+Tworzymy przy okazji bazę danych magento
+
+Musimy w WAMP zmienić wersję PHP na 7.1, klikając w ikonke w zasobniku->PHP->version
+
+Dodatkowo będziemy musieli dla naszego folderu z magento ustawić permissions.
+klikajac prawym na folder RebisShop i dajac dostęp każdemu do wszystkiego (w sensie użytkownikom)!!!
+
+MAGENTO PROFILE:
+login: admin
+hasło: Password1
+mail: admin@example.com
+
+TUTORIALE:
+http://insync.co.in/how-to-install-magento-on-wamp-server-localhost-localcomputer/
+https://www.youtube.com/watch?v=I6VHYYBbojs
+
+Instalacja tego syfu trwa w chuj czasu - tak w przyblizeniu pół godziny.
+Jeżeli się zacięło ale nie ma errora to znaczy, ze się instaluje
+
+NA GICIE BĘDZIE FOLDER RebisShop - jak nazwa repo... także wiecie co z tym zrobić
+DODATKOWO - baza danych, którą będziemy sobie podawali w jakiś sposób... chmura/repo
+
+Problemy z brakiem pamięci rozwiązuje się zwiększając wartość w /pub/user.ini
