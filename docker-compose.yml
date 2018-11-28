@@ -1,6 +1,7 @@
 version: '2'
 services:
   db:
+    image: mariadb
     build: './magento-baza-danych'
     environment:
       - MYSQL_ROOT_PASSWORD=root
