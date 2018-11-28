@@ -4,7 +4,7 @@ services:
     build: './magento-baza-danych'
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=prestashop_hm
+      - MYSQL_DATABASE=magento
     ports:
       - "3306:3306"
     networks:
