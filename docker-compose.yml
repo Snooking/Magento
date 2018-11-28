@@ -10,7 +10,7 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - default
+      - rebis-network
     volumes:
       - ./mysql/data:/var/lib/mysql
   phpmyadmin:
@@ -22,6 +22,8 @@ services:
      - MYSQL_ROOT_PASSWORD=root
     ports:
       - "8080:80"
+    networks:
+      - rebis-network
   apache:
     build: './RebisShop-www'
     volumes:
@@ -33,4 +35,33 @@ services:
     links:
       - db
     networks:
-      - default
+      - rebis-network
+  redis:
+    image: redis
+    ports:
+     - 6379
+    networks:
+      - rebis-network
+
+  redis-session:
+    image: redis
+    ports:
+     - 6379
+    networks:
+      - rebis-network
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - rebis-network
+
+networks:
+  rebis-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
