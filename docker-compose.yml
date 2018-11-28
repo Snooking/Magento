@@ -1,0 +1,31 @@
+version: "2.0"
+services:
+  db:
+    build: './magento-baza-danych'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=prestashop_hm
+    ports:
+      - "3306:3306"
+    networks:
+      - default
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+  apache:
+    build: './RebisShop-www'
+    volumes:
+      - ./RebisShop-www/RebisShop/:/var/www/html/
+    depends_on:
+      - db
+    ports:
+      - "80:80"
+    links:
+      - db
+    networks:
+      - default
