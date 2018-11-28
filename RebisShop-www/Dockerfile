@@ -1,4 +1,4 @@
-FROM php:5.6-apache
+FROM php:7.0.6-apache
 
 RUN docker-php-ext-install pdo pdo_mysql
 
