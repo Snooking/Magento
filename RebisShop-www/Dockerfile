@@ -7,6 +7,7 @@ RUN docker-php-ext-configure intl
 RUN docker-php-ext-install intl
 RUN a2enmod rewrite
 
+RUN chmod -R root:www-data .
 RUN usermod -u 1000 www-data
 RUN usermod -G staff www-data
 RUN apt-get update && \
