@@ -12,3 +12,4 @@ RUN usermod -G staff www-data
 RUN apt-get update && \
     apt-get install -y \
         zlib1g-dev && docker-php-ext-install zip
+RUN apt-get update && apt-get install -y composer && ./composer
