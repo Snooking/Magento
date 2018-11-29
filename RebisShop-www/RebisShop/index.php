@@ -20,6 +20,7 @@
 
 try {
     require __DIR__ . '/app/bootstrap.php';
+    echo "here";
 } catch (\Exception $e) {
     echo <<<HTML
 <div style="font:12px/1.35em arial, helvetica, sans-serif;">
@@ -35,5 +36,8 @@ HTML;
 
 $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
 /** @var \Magento\Framework\App\Http $app */
+echo "here";
 $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+echo "here";
 $bootstrap->run($app);
+echo "here";
