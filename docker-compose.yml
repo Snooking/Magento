@@ -17,7 +17,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
-     - PMA_HOST=db
+     - PMA_HOST=db:3306
      - PMA_USER=root
      - PMA_PASSWORD=root
      - MYSQL_ROOT_PASSWORD=root
@@ -30,11 +30,11 @@ services:
     volumes:
       - ./RebisShop-www/RebisShop/:/var/www/html/
     depends_on:
-      - db
+      - db:3306
     ports:
       - 80:80
     links:
-      - db
+      - db:3306
     networks:
       - rebis-network
   redis:
@@ -65,4 +65,4 @@ networks:
 
 volumes:
   dbdata:
-    driver: local
+    driver: bridge
