@@ -27,6 +27,9 @@ services:
       - rebis-network
   apache:
     build: './RebisShop-www'
+    environment:
+      XDEBUG_CONFIG: "remote_host=localhost"
+      PHP_IDE_CONFIG: "serverName=Docker"
     volumes:
       - ./RebisShop-www/RebisShop/:/var/www/html/
     depends_on:
