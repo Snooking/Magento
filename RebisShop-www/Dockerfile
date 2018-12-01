@@ -65,11 +65,9 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && npm i -g grunt-cli yarn
 
 # Install Composer
-RUN apt update && \
-    apt install curl php-cli php-mbstring git unzip && \
-    cd ~ && \
-    curl -sS https://getcomposer.org/installer -o composer-setup.php && \
-    php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+RUN	curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
+RUN composer global require hirak/prestissimo
 
 # Install Code Sniffer
 
